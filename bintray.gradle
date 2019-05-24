@@ -62,7 +62,6 @@ bintray {
 
         repo = bintrayRepo
         name = bintrayName
-        userOrg="gthanos"
         desc = libraryDescription
         websiteUrl = siteUrl
         vcsUrl = gitUrl
