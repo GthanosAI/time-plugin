@@ -1,6 +1,6 @@
 apply plugin: 'com.github.dcendents.android-maven'
 group = publishedGroupId
-version = libraryVersion
+version ="1.0.0"
 
 install {
     repositories.mavenInstaller {

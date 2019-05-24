@@ -1,15 +1,15 @@
 apply plugin: 'com.android.library'
+
+ext {
+    bintrayName = 'PerformanceDebuger'
+    artifact = bintrayName
+    libraryName = 'time debug'
+    libraryDescription = 'a performance debug for android'
+    libraryVersion = "1.0.0"
+}
 android {
 
     rootProject.ext.setDefaultConfig project
-
-    ext {
-        bintrayName = 'PerformanceDebuger'
-        artifact = bintrayName
-        libraryName = 'time debug'
-        libraryDescription = 'a performance debug for android'
-        libraryVersion = "1.0.0"
-    }
 
     defaultConfig {
         versionCode 1
@@ -27,15 +27,15 @@ android {
     }
 
 }
-
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation rootProject.ext.supportDependencies.appcompat
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-}
+//
+//dependencies {
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation rootProject.ext.supportDependencies.appcompat
+//
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+//}
 
 //apply plugin: 'maven'
 //
@@ -54,13 +54,3 @@ dependencies {
 
 apply from: '../install.gradle'
 apply from: '../bintray.gradle'
-
-//publish{
-//    userOrg='gthanos'
-//    repoName= 'TimeDebuger'
-//    groupId='com.ifog.plugin'
-//    artifactId='TimeDebuger'
-//    publishVersion='1.0.0'
-//    desc='time debuger'
-//    website='https://gthanos.bintray.com/TimeDebuger'
-//}
