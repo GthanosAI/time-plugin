@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * @author: created by hewei
  * @date: 2019/5/16
- * Copyright (c) 2019 https://www.qutoutiao.net. All rights reserved.
+ * Copyright (c) 2019 https://www.gthanos.cn. All rights reserved.
  */
 
 public class TimeDebugTransform extends BaseTransform {
