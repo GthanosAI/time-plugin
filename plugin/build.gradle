@@ -1,0 +1,34 @@
+apply plugin: 'groovy'
+//apply plugin: 'maven'
+ext {
+    bintrayName = 'time-plugin'
+    artifact = bintrayName
+    libraryName = 'time-plugin'
+    libraryDescription = 'A gradle plugin used for time debug'
+    libraryVersion = "1.0.0"
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile 'com.android.tools.build:gradle:3.0.1'
+    implementation 'commons-io:commons-io:2.6'
+    implementation 'commons-codec:commons-codec:1.10'
+    implementation 'org.ow2.asm:asm:5.1'
+    implementation 'org.ow2.asm:asm-util:5.1'
+    implementation 'org.ow2.asm:asm-commons:5.1'
+}
+
+//uploadArchives{
+////    repositories{
+////        mavenDeployer{
+////            repository(url:uri('../repo'))
+////            pom.groupId = 'com.ifog.plugin'  //groupId ，自行定义，一般是包名
+////            pom.artifactId = 'time-plugin' //artifactId ，自行定义
+////            pom.version = '1.0.0' //version 版本号
+////        }
+////    }
+////}
+
+apply from: '../install.gradle'
+apply from: '../bintray.gradle'
