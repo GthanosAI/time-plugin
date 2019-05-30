@@ -10,7 +10,7 @@ import android.util.Log;
 
 public class TimeDebugerManager {
 
-    public static boolean isDeug = false;
+    public static boolean isDeug = true;
 
     private static ITimeLogger logger;
 
@@ -21,7 +21,7 @@ public class TimeDebugerManager {
     //call in plugin
     public static void timeMethod(String method, long time) {
         if (isMainThread()) {
-            if (isDeug){
+            if (isDeug) {
                 Log.d("xxxx", "method:" + method + ", time:" + time);
             }
             if (logger != null) {
