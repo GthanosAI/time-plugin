@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'time-plugin'
 android {
     rootProject.ext.setDefaultConfig project
 
@@ -23,11 +23,18 @@ android {
 
 }
 
+timeExt{
+    runVariant = 'ALL'
+    whiteList = ['com.ifog']
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.ext.supportDependencies.appcompat
     implementation rootProject.ext.supportDependencies.constraint_layout
 
+
+    implementation 'com.ifog:PerformanceDebuger:1.0.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

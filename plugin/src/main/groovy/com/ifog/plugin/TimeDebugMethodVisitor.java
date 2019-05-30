@@ -24,6 +24,10 @@ public class TimeDebugMethodVisitor extends LocalVariablesSorter implements Opco
         this.methodName = name.replace("/", ".");
     }
 
+    public void setInject(boolean inject){
+        this.inject = inject;
+    }
+
     @Override
     public void visitCode() {
         super.visitCode();

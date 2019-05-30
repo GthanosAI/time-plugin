@@ -20,10 +20,12 @@ public class TimeDebugClassVisitor extends ClassVisitor {
 
     private String className;
     private boolean isITimeLoggerMethod = false;
+    private boolean isAnnotation;
 
 
-    public TimeDebugClassVisitor(ClassVisitor classVisitor) {
+    public TimeDebugClassVisitor(ClassVisitor classVisitor, boolean isAnnotation) {
         super(Opcodes.ASM5, classVisitor);
+        this.isAnnotation = isAnnotation;
     }
 
 
@@ -43,6 +45,7 @@ public class TimeDebugClassVisitor extends ClassVisitor {
             return mv;
         } else if (mv != null) {
             mv = new TimeDebugMethodVisitor(Opcodes.ASM5, mv, access, className + File.separator + name, desc);
+            ((TimeDebugMethodVisitor) mv).setInject(!isAnnotation);
         }
         return mv;
     }

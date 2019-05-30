@@ -38,6 +38,6 @@ public class TimeDebugInjector extends BaseByteInjector {
 
     @Override
     public ClassVisitor wrapClassWriter(ClassWriter classWriter) {
-        return new TimeDebugClassVisitor(classWriter);
+        return new TimeDebugClassVisitor(classWriter, extension.isAnnotation());
     }
 }

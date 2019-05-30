@@ -20,4 +20,8 @@ public class TimeDebugExtension {
                 ", whiteList=" + whiteList +
                 '}';
     }
+
+    public boolean isAnnotation(){
+        return runVariant == RunVariant.ANNOTATION;
+    }
 }
