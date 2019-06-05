@@ -5,7 +5,7 @@ ext {
     artifact = bintrayName
     libraryName = 'time-plugin'
     libraryDescription = 'A gradle plugin used for time debug'
-    libraryVersion = "1.0.0"
+    libraryVersion = "1.0.1"
 }
 
 dependencies {

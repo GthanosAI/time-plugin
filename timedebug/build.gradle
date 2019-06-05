@@ -5,7 +5,7 @@ ext {
     artifact = bintrayName
     libraryName = 'time debug'
     libraryDescription = 'a performance debug for android'
-    libraryVersion = "1.0.0"
+    libraryVersion = "1.0.2"
 }
 android {
 
@@ -27,29 +27,6 @@ android {
     }
 
 }
-//
-//dependencies {
-//    implementation fileTree(dir: 'libs', include: ['*.jar'])
-//    implementation rootProject.ext.supportDependencies.appcompat
-//
-//    testImplementation 'junit:junit:4.12'
-//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-//}
-
-//apply plugin: 'maven'
-//
-//uploadArchives{
-//    repositories{
-//        mavenDeployer{
-//            repository(url:uri('../repo'))
-//
-//            pom.groupId = 'com.ifog.plugin'  //groupId ，自行定义，一般是包名
-//            pom.artifactId = 'TimeDebuger' //artifactId ，自行定义
-//            pom.version = '1.0.0' //version 版本号
-//        }
-//    }
-//}
 
 
 apply from: '../install.gradle'

@@ -1,7 +1,10 @@
 package com.ifog.myapplication;
 
 import android.app.Application;
+import android.util.Log;
 
+import com.ifog.timedebug.DebugTime;
+import com.ifog.timedebug.ITimeLogger;
 import com.ifog.timedebug.TimeDebugerManager;
 
 /**
@@ -11,9 +14,18 @@ import com.ifog.timedebug.TimeDebugerManager;
  */
 
 public class MainApplication extends Application {
+
+    @DebugTime
     @Override
     public void onCreate() {
         super.onCreate();
         TimeDebugerManager.isDeug = true;
+
+        TimeDebugerManager.setLogger(new ITimeLogger() {
+            @Override
+            public void logger(String method, long cost) {
+                Log.e("=======AntiTime=======", "#" + method + ":cost:" + cost);
+            }
+        });
     }
 }
