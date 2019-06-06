@@ -55,11 +55,13 @@ dependencies{
     implementation 'com.ifog:PerformanceDebuger:1.0.2'
 }
 ```
-runVariant 目前支持'DEBUG', "ANNOTATION", "NONE" 三种模式
-#####区别:
-1.'DEBUG'模式下，对所有的方式会插入统计耗时代码
-2. "ANNOTATION"模式，只正对 @DebugTime注解的方法出啊如统计耗时方法
-3. "NONE"模式下，不会插入统计耗时代码
+- runVariant 目前支持'DEBUG', "ANNOTATION", "NONE" 三种模式
+
+##### 区别:
+
+- 1).'DEBUG'模式下，对所有的方式会插入统计耗时代码
+- 2). "ANNOTATION"模式，只正对 @DebugTime注解的方法出啊如统计耗时方法
+- 3). "NONE"模式下，不会插入统计耗时代码
 
 
 3. 在MainApplication中初始化
