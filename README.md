@@ -24,7 +24,7 @@ com.ifog:time-plugin:1.0.1
 
 使用说明：
 
-####### 配置:
+###### 配置:
 1. project
 ```
 buildscript {
