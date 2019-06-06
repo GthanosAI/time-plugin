@@ -12,7 +12,7 @@ public void methodA(){
 }
 ```
 
-有没有更好的办法呢，搜索了一圈，看到了[别人家思路](https://juejin.im/post/5bce85e9e51d457b7c3e6bed), 遗憾的是没有看到开源项目，但是提供了一个很好的思路，于是乎，按照这个思路自己去撸一个供大家使用.
+有没有更好的办法呢??
 
 ###### 整体思路：
 1. 思路：在app编译是，通过AOP字节码注入的方式实现对每一个方法插入耗时统计的代码，如例子1所示。
@@ -56,10 +56,10 @@ dependencies{
 }
 ```
 runVariant 目前支持'DEBUG', "ANNOTATION", "NONE" 三种模式
-区别:
-'DEBUG'模式下，对所有的方式会插入统计耗时代码
-"ANNOTATION"模式，只正对 @DebugTime注解的方法出啊如统计耗时方法
-"NONE"模式下，不会插入统计耗时代码
+#####区别:
+1.'DEBUG'模式下，对所有的方式会插入统计耗时代码
+2. "ANNOTATION"模式，只正对 @DebugTime注解的方法出啊如统计耗时方法
+3. "NONE"模式下，不会插入统计耗时代码
 
 
 3. 在MainApplication中初始化
