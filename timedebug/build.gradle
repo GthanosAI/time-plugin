@@ -1,3 +1,7 @@
+def local = rootProject.ext.read_config()
+if (local) {
+    apply plugin: 'maven'
+}
 apply plugin: 'com.android.library'
 
 ext {
@@ -27,7 +31,19 @@ android {
     }
 
 }
+if (local) {
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url: uri('../repo'))
+                pom.groupId = publishedGroupId  //groupId ，自行定义，一般是包名
+                pom.artifactId = project.ext.artifact //artifactId ，自行定义
+                pom.version = project.ext.libraryVersion //version 版本号
+            }
+        }
+    }
+} else {
+    apply from: '../install.gradle'
+    apply from: '../bintray.gradle'
+}
 
-
-apply from: '../install.gradle'
-apply from: '../bintray.gradle'

@@ -64,7 +64,15 @@ ext {
             retrofit_rxjava_adapter: 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0-RC3',
             gson                   : 'com.google.code.gson:gson:2.4',
             greendao               : 'org.greenrobot:greendao:3.2.2',
-
-
     ]
+
+    read_config = {
+        Properties properties = new Properties()
+        if (project.rootProject.file('debug.properties').exists()) {
+            properties.load project.rootProject.file('debug.properties').newDataInputStream()
+            return properties.getProperty("DEBUG_MODE").toBoolean()
+        } else {
+            return false
+        }
+    }
 }

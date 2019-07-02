@@ -10,4 +10,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 public @interface DebugTime {
+    String name();
+
+    int line();
 }

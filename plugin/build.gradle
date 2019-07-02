@@ -1,5 +1,10 @@
 apply plugin: 'groovy'
-//apply plugin: 'maven'
+
+def local = rootProject.ext.read_config()
+if (local) {
+    apply plugin: 'maven'
+}
+
 ext {
     bintrayName = 'time-plugin'
     artifact = bintrayName
@@ -19,16 +24,21 @@ dependencies {
     implementation 'org.ow2.asm:asm-commons:5.1'
 }
 
-//uploadArchives{
-////    repositories{
-////        mavenDeployer{
-////            repository(url:uri('../repo'))
-////            pom.groupId = 'com.ifog.plugin'  //groupId ，自行定义，一般是包名
-////            pom.artifactId = 'time-plugin' //artifactId ，自行定义
-////            pom.version = '1.0.0' //version 版本号
-////        }
-////    }
-////}
+if (local) {
 
-//apply from: '../install.gradle'
-//apply from: '../bintray.gradle'
+    uploadArchives {
+
+        repositories {
+            mavenDeployer {
+                repository(url: uri('../repo'))
+                pom.groupId = publishedGroupId  //groupId ，自行定义，一般是包名
+                pom.artifactId = project.ext.artifact //artifactId ，自行定义
+                pom.version = project.ext.libraryVersion //version 版本号
+            }
+        }
+    }
+} else {
+    apply from: '../install.gradle'
+    apply from: '../bintray.gradle'
+}
+

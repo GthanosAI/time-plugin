@@ -4,16 +4,15 @@ apply from: 'config.gradle'
 buildscript {
     repositories {
         google()
-        jcenter()
+//        jcenter()
         maven { url 'https://jitpack.io' }
-
+        maven { url uri('./repo') }
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-
         classpath 'com.ifog:time-plugin:1.0.1'
     }
 }
@@ -22,8 +21,8 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'https://jitpack.io' }
-
+        maven { url uri('./repo') }
+//        maven { url 'https://jitpack.io' }
     }
 }
 

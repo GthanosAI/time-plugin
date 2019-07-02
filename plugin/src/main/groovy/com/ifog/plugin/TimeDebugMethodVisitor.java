@@ -46,7 +46,8 @@ public class TimeDebugMethodVisitor extends LocalVariablesSorter implements Opco
 
         System.out.println("==========:" + desc + "," + visible);
 
-        return super.visitAnnotation(desc, visible);
+        AnnotationVisitor visitor = super.visitAnnotation(desc, visible);
+        return visitor;
     }
 
     @Override
