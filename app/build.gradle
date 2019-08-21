@@ -24,10 +24,10 @@ android {
 
 }
 
-timeExt{
-    runVariant = 'ALL'
-    whiteList = ['com.ifog']
-}
+//timeExt{
+//    runVariant = 'ALL'
+//    whiteList = ['com.ifog']
+//}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

@@ -38,7 +38,6 @@ public class TimeDebugMethodVisitor2 extends AdviceAdapter implements Opcodes {
     @Override
     protected void onMethodExit(int opcode) {
         System.out.println("======onMethodExi1t");
-
         mv.visitLdcInsn(methodName);
         mv.visitMethodInsn(INVOKESTATIC, Setting.SYSTEM_CLOCK_PACKAGE, Setting.SYSTEM_CLOCK_METHOD, Setting.SYSTEM_CLOCK_METHOD_SIGNATURE, false);
         mv.visitMethodInsn(INVOKESTATIC, Setting.TIMEDEBUGERMANAGER_CLASS, Setting.TIMEDEBUGERMANAGER_METHOD, Setting.TIMEDEBUGERMANAGER_METHOD_SIGNATURE, false);

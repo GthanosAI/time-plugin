@@ -1,7 +1,6 @@
 package com.ifog.timedebug;
 
 import android.os.Looper;
-import android.os.SystemClock;
 import android.util.Log;
 
 /**
@@ -11,7 +10,7 @@ import android.util.Log;
 
 public class TimeDebugerManager {
 
-    public static boolean isDeug = true;
+    public static boolean isDebug = false;
 
     private static ITimeLogger logger;
 
@@ -22,7 +21,7 @@ public class TimeDebugerManager {
     //call in plugin
     public static void timeMethod(String method, long time) {
         if (isMainThread()) {
-            if (isDeug) {
+            if (isDebug) {
                 Log.d("xxxx", "method:" + method + ", time:" + time);
             }
             if (logger != null) {
